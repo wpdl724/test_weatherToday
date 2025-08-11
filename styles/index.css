@@ -1,0 +1,114 @@
+/* index.css */
+body { 
+    width: 410px;
+    margin: 0 auto;
+}
+
+#wrap {
+    width: 440px;
+    margin: 0 auto;
+    padding: 40px 15px;
+    background: linear-gradient(to bottom,#99CDD8 0%,#8CB398 50%,#DBF0DD 100%);
+
+}
+#wrap header {
+    display: flex;
+}
+#wrap header .top_wrap {
+
+}
+#wrap header .top_wrap .today {
+    /* background-color: black; */
+    width: 410px;
+    height: 120px;
+    display: flex; 
+    flex-flow: row;
+    text-align: center;
+    justify-content: space-between;
+    padding: 40px 15px;
+    align-items: center;
+}
+#wrap header .top_wrap .today h1{
+    color: #fff;
+    font-size: 1.125em;
+    font-weight: 400;
+}
+
+#wrap header .top_wrap .today .refresh_btn {}
+#wrap header .top_wrap .today .refresh_btn a {}
+#wrap header .top_wrap .today .refresh_btn a img {}
+
+/* --------------------------------------------------- 헤더 끝 */
+
+#wrap main .area_wrap {
+    width: 100%;
+    height: 700px;
+    margin: 0 auto;
+} /* 두번째 묶음 - 인천 */
+#wrap main .area_wrap .weather{
+    /* background-color: yellow; */
+    
+}
+#wrap main .area_wrap .weather .incheon_txt_wrap{
+    width: 410px;
+    padding: 0 15px;
+    /* background-color: violet; */
+    margin-bottom: 60px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+#wrap main .area_wrap .weather .incheon_txt_wrap h2{
+    color: #fff;
+    font-weight: 1.5em;
+}
+#wrap main .area_wrap .weather .incheon_txt_wrap p{
+    color:#fff;
+    font-size: 3.125em;
+    font-weight: 500;
+
+}
+#wrap main .area_wrap .weather .weather_img {
+    margin: 0 auto;
+    padding: 0 100px;
+}
+#wrap main .area_wrap .incheon .weather_img #incheon{
+    /* background-color: #8CB398; */
+    width: 200px; height: 180px;
+}
+#wrap main .area_wrap .incheon .txt_contents{
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+
+}
+#wrap main .area_wrap .incheon .txt_contents h3{
+    color:#fff;
+    font-weight: 500;
+    font-size: 1.5em;
+    
+}
+#wrap main .area_wrap .incheon .txt_contents .time_weather {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 30px;
+    /* background-color: cyan; */
+    /* align-items: center; */
+    padding: 0 126px;
+}
+#wrap main .area_wrap .incheon .txt_contents .time_weather p {
+    color:#fff;
+    font-size: 1.125em;
+    text-align: center;
+    margin-right: 20px;
+}
+#wrap main .area_wrap .incheon .txt_contents .time_weather span {
+    color:#fff;
+}
+#wrap main .area_wrap .seoul{
+    display: none;
+}
+

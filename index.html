@@ -4,8 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeateherToday</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/respon.css">
+    <script src="./scripts/index.js" defer></script>
+    <script src="./scripts/weather.js" defer></script>
 </head>
 <body>
-    
+    <div id="wrap">
+        <header>
+            <div class="top_wrap">
+                <div class="today">
+                    <h1>오늘의 날씨</h1>
+                    <div class="refresh_btn">
+                        <a href="#"><img src="./images/refresh.png" alt="오늘의 날씨 새로고침 아이콘"></a>
+                    </div>
+                </div>
+            </div><!-- top warp 끝 -->
+        </header>
+        <main>
+            <div class="area_wrap"> <!-- 두번째 묶음 -->
+                <div class="weather incheon"><!-- 서울 지역 -->
+                    <div class="incheon_txt_wrap">
+                        <h2>서울</h2>
+                        <p>24℃</p>
+                    </div>
+                    <div class="weather_img"><!-- 날씨 아이콘 -->
+                        <img src="./images/sun.png" id="incheon" alt="서울 오늘의 날씨 아이콘">
+                    </div>
+                    <div class="txt_contents">
+                        <h3>어제보다 맑음</h3>
+                        <div class="time_weather">
+                            <p>현재시각</p>
+                            <span>PM 03:20</span>
+                        </div>
+                    </div>
+                </div><!-- 서울 지역  끝-->
+                <div class="weather seoul"><!-- 부산 지역 -->
+                    <h2>부산</h2>
+                    <p>20℃</p>
+                    <div class="weather_img"><!-- 날씨 아이콘 -->
+                        <img src="./images/white_01.png" alt="부산 오늘의 날씨 아이콘">
+                    </div>
+                    <div class="txt_contents">
+                        <h3>어제보다 흐림.</h3>
+                        <p>현재시각</p>
+                        <span>PM 01:20</span>
+                    </div>
+                </div><!-- 부산 지역  끝-->
+                <div class="weather seoul"><!-- 제주 지역 -->
+                    <h2>제주</h2>
+                    <p>22℃</p>
+                    <div class="weather_img"><!-- 날씨 아이콘 -->
+                        <img src="./images/rain.png" alt="제주 오늘의 날씨 아이콘">
+                    </div>
+                    <div class="txt_contents">
+                        <h3>우산을 챙겨주세요.</h3>
+                        <p>현재시각</p>
+                        <span>PM 01:20</span>
+                    </div>
+                </div><!-- 제주 지역  끝-->
+            </div>
+        </main>
+    </div>
 </body>
 </html>
