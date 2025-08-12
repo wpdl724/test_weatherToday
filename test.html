@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 날씨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin:0; padding:0; line-height:1.5;
+            letter-spacing: -0.02em;
+            font-size:1em; font-weight:400;
+            box-sizing: border-box;
+            font-family:'Noto Sans KR', sans-serif;
+        }
+        #app {
+            max-width:430px; min-width:320px;
+            background:#f5f5f5; height:90vh;
+            margin:5vh auto 0; padding:30px;
+            border-radius:10px;
+        }
+        #app header {
+            display:flex; justify-content: space-between;
+            align-items:center; margin:0 0 20px;
+        }
+        #app header h1 {font-size:0.95rem; font-weight:600;}
+        #app header #refresh {
+            border:0; background:none;
+            width:32px; height:32px; cursor:pointer;
+        }
+        #app header #refresh img {width:100%;}
+        #app main {
+            background:#fff;
+            border-radius:10px;
+            height:90%; padding:30px;
+            display:grid;
+            grid-template-areas:
+                'city temp'
+                'img img'
+                'desc desc'
+                'de de';
+            grid-template-columns:50% auto;
+            grid-template-rows: 100px min-content min-content auto;
+        }
+        /* #app main > * {border:1px solid #000;} */
+        #app main #city {
+            grid-area:city;
+            font-size:2rem;
+        }
+        #app main #temp {
+            grid-area:temp;
+            text-align: right; font-size:2rem; font-weight:600;
+        }
+        #app main #img {grid-area:img; text-align: center;}
+        #app main #img img {}
+        #app main #desc {
+            grid-area:desc; 
+            text-align: center;
+            margin:30px 0 0;
+        }
+        #app main .details {grid-area:de; line-height:1.8; text-align: center;}
+        @media screen and (max-width:767px){
+            #app main {
+                grid-template-areas:
+                    'city city'
+                    'temp temp'
+                    'img img'
+                    'desc desc'
+                    'de de';
+                grid-template-columns:50% auto;
+                grid-template-rows: 60px min-content min-content auto;
+            }
+            #app main #city {text-align:center;}
+            #app main #temp {text-align:center; margin:0 0 20px;}
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>오늘의 날씨</h1>
+            <button type="button" id="refresh"><img src="https://cdn-icons-png.flaticon.com/128/5690/5690282.png" alt="새로고침"></button>
+        </header>
+        <main>
+            <h1 id="city"></h1>
+            <p id="temp"></p>
+            <p id="img"><img src="" alt=""></p>
+            <p id="desc"></p>
+            <p class="details"></p>
+        </main>
+    </div>    
+
+    <script>
+        const weatherData = [
+            { city: "Seoul", temp: "24°C", desc: "맑음" },
+            { city: "Busan", temp: "20°C", desc: "흐림" },
+            { city: "Jeju", temp: "22°C", desc: "비" },
+        ];
+        const weatherIcon = [
+            'https://cdn-icons-png.flaticon.com/128/4814/4814268.png', //맑음
+            'https://cdn-icons-png.flaticon.com/128/1163/1163661.png', //흐림
+            'https://cdn-icons-png.flaticon.com/128/4088/4088981.png', //비
+        ]
+
+        const city = document.querySelector('#city')
+        const temp = document.querySelector('#temp')
+        const desc = document.querySelector('#desc')
+        const icon = document.querySelector('#img')
+        const de = document.querySelector('.details')
+        const refresh = document.querySelector('#refresh')
+
+        city.textContent = weatherData[0].city
+        temp.textContent = weatherData[0].temp
+        desc.textContent = weatherData[0].desc
+        icon.children[0].src = weatherIcon[0]
+        de.innerHTML = '양산과 선크림을<br>꼭 챙기고 다니세요'
+
+        refresh.addEventListener('click',()=>{
+            console.log(Math.floor(Math.random()*3))
+            const randomNum = Math.floor(Math.random()*3);
+            city.textContent = weatherData[randomNum].city
+            temp.textContent = weatherData[randomNum].temp
+            desc.textContent = weatherData[randomNum].desc
+            icon.children[0].src = weatherIcon[randomNum]
+
+            if(weatherData[randomNum].desc == "맑음"){
+                de.innerHTML = '양산과 선크림을<br>꼭 챙기고 다니세요'
+            }else if(weatherData[randomNum].desc == "흐림"){
+                de.innerHTML = '오후에 비 소식이<br>있을 수 있으니 우산 꼭 챙기세요'
+            }else{
+                de.innerHTML = '비가 오고 있습니다.<br>외출 시 우산 꼭 챙기세요'
+            }
+        })
+
+    </script>
+</body>
+</html>
